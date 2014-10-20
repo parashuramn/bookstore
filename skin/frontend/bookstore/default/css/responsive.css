@@ -1,0 +1,27 @@
+@media(max-width:767px) {
+    .navbar-nav > li {
+        border-bottom: 1px solid #DDDDDD;
+        display: block;
+    }
+    .nav .caret {
+        display: block;
+        float: right;
+        margin-top: 10px;
+    }
+}
+
+@media(min-width:768px) {
+    .nav > li > a { padding: 15px 10px; }
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img { margin: 0 auto; }
+
+}
+
+@media(min-width:992px) {
+
+}
+
+@media(min-width:1200px) {
+    .container {
+        width:970px;
+    }
+}
