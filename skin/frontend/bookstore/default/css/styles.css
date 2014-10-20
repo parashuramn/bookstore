@@ -68,6 +68,13 @@ p.required, .validation-advice {
 .validation-failed {
     border-color:#d11d1d;
 }
+label.required:after, span.required:after {
+    content: ' *';
+    color: red;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-size: 12px;
+}
 .form-group li{margin-bottom: 20px;}
 .buttons-set{max-width: 445px}
 .buttons-set .back-link{float:left;line-height: 33px;margin:0}
