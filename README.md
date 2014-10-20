@@ -1,4 +1,4 @@
-bookstore
+Magento Theme
 =========
 
 Book store theme
