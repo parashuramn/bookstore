@@ -28,10 +28,10 @@
 <config>
     <global>
         <install>
-            <date><![CDATA[Mon, 20 Oct 2014 02:32:53 +0000]]></date>
+            <date><![CDATA[Thu, 16 Oct 2014 15:56:45 +0000]]></date>
         </install>
         <crypt>
-            <key><![CDATA[d93c99fdae13d1246ceeb1616ea51bb9]]></key>
+            <key><![CDATA[9f1f3e40ebcdb8a95c27add10c9b4ba4]]></key>
         </crypt>
         <disable_local_modules>false</disable_local_modules>
         <resources>
@@ -43,7 +43,7 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[]]></password>
-                    <dbname><![CDATA[bookstore]]></dbname>
+                    <dbname><![CDATA[magbookstore]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
