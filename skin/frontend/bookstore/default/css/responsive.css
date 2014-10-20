@@ -25,3 +25,65 @@
         width:970px;
     }
 }
+@media only screen and (max-width: 479px) {
+    .pager .amount--has-pages {
+        display: none;
+    }
+
+    .pages {
+        float: left;
+    }
+
+    .limiter label {
+        display: none;
+    }
+}
+@media only screen and (max-width: 770px) {
+    .col1-layout .sorter,
+    .col1-layout .pager {
+        width: 100%;
+    }
+    .col1-layout .pager {
+        float: left;
+        clear: both;
+    }
+    .col1-layout .pager .pages {
+        float: left;
+        margin-left: 0;
+    }
+    .col1-layout .pager .count-container {
+        float: right;
+    }
+}
+@media only screen and (max-width: 979px) {
+    .col2-left-layout .sorter,
+    .col2-left-layout .pager,
+    .col2-right-layout .sorter,
+    .col2-right-layout .pager,
+    .col3-layout .sorter,
+    .col3-layout .pager {
+        width: 100%;
+    }
+    .col2-left-layout .pager,
+    .col2-right-layout .pager,
+    .col3-layout .pager {
+        float: left;
+        clear: both;
+    }
+    .col2-left-layout .pager .pages,
+    .col2-right-layout .pager .pages,
+    .col3-layout .pager .pages {
+        float: left;
+        margin-left: 0;
+    }
+    .col2-left-layout .pager .count-container,
+    .col2-right-layout .pager .count-container,
+    .col3-layout .pager .count-container {
+        float: right;
+    }
+}
+@media only screen and (max-width: 1279px) {
+    .toolbar .view-mode > label {
+        display: none;
+    }
+}
