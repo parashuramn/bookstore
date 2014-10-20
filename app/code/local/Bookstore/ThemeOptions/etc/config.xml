@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <models>
+            <themeoptions>
+                <class>Bookstore_ThemeOptions_Model</class>
+            </themeoptions>
+        </models>
+        <blocks>
+            <themeoptions>
+                <class>Bookstore_ThemeOptions_Block</class>
+            </themeoptions>
+        </blocks>
+        <helpers>
+            <themeoptions>
+                <class>Bookstore_ThemeOptions_Helper</class>
+            </themeoptions>
+        </helpers>
+    </global>
+    <!-- set default configurations -->
+    <default>
+        <themeoptions>
+            <header>
+                <menu_bg>CCCCCC</menu_bg>
+            </header>
+        </themeoptions>
+    </default>
+    <adminhtml>
+        <layout>
+            <updates>
+                <themeoptions>
+                    <file>bookstore_themeoptions.xml</file>
+                </themeoptions>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
