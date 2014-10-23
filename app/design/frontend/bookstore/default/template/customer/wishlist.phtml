@@ -32,7 +32,7 @@
     <h1><?php echo $this->__('Wishlist') ?></h1>
 </div>
 <?php if($wishlist->getSize()): ?>
-<form action="<?php echo $this->getUrl('customer/wishlist/updatePost') ?>" method="post">
+<form role="form" action="<?php echo $this->getUrl('customer/wishlist/updatePost') ?>" method="post">
     <table class="data-table">
         <col />
         <col width="60" />
@@ -62,12 +62,12 @@
     </table>
     <div class="buttons-set">
         <a href="<?php echo Mage::getBaseUrl() ?>">&laquo; <?php echo $this->__('Continue Shopping') ?></a>
-        <input type="submit" value="<?php echo $this->__('Update') ?>" class="input-button" name="do" />
+        <input type="submit" value="<?php echo $this->__('Update') ?>" class="form-control input-button" name="do" />
     </div>
 </form>
 <?php else: ?>
     <p><?php echo $this->__('You have placed no products yet.') ?></p>
     <div class="buttons-set">
-        <p class="back-link"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back - link to the previously viewed page') ?></a></p>
+        <p class="btn btn-warning"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back - link to the previously viewed page') ?></a></p>
     </div>
 <?php endif ?>

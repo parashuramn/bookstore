@@ -45,3 +45,7 @@ Temporary Items
 var
 media
 app/etc/local.xml
+app/design/frontend/default
+app/design/frontend/rwd
+app/design/frontend/base
+app/code/core

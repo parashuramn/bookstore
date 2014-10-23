@@ -37,6 +37,9 @@
     .limiter label {
         display: none;
     }
+    .form-group #region_id, .form-group #country{
+        width: 200px
+    }
 }
 @media only screen and (max-width: 770px) {
     .col1-layout .sorter,
@@ -86,4 +89,7 @@
     .toolbar .view-mode > label {
         display: none;
     }
+}
+@media only screen and(max-width: 320px) {
+    .form-group #region_id, .form-group #country{width: 200px}
 }
