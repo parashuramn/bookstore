@@ -604,6 +604,7 @@ label.required:after, span.required:after {
 /*Product View Page*/
 input[type=number].qty, input[type=text].qty{width: 40px;}
 input[type=text]#productTagName{width: 100px;}
+input[type=text]#coupon_code{width: 108px;}
 .product-view .add-to-cart .qty-wrapper,
 .product-view .add-to-cart .qty-wrapper label {
     margin-right: 7px;
@@ -640,16 +641,8 @@ input[type=text]#productTagName{width: 100px;}
 .product-view .block-related, .box-collateral{
     margin-bottom: 10px;
 }
-/* Product Tabs */
-.product-tabs { margin-bottom:15px; border-bottom:1px solid #666; background:#f2f2f2 url(../images/bkg_tabs.gif) 0 100% repeat-x; height: 25px;}
-.product-tabs li { float:left; border-right:1px solid #a4a4a4; border-left:1px solid #fff; font-size:1.1em; line-height:1em; }
-.product-tabs li.first { border-left:0; }
-.product-tabs li.last { border-right:0; }
-.product-tabs a { display:block; padding:6px 15px; color:#444; }
-.product-tabs a:hover { background-color:#ddd; text-decoration:none; color:#444; }
-.product-tabs li.active a,
-.product-tabs li.active a:hover { background-color:#666; font-weight:bold; color:#fff; }
-.product-tabs-content h2 { display:none; font-size:12px; font-weight:bold; }
-.product-collateral{clear: both}
-.product-view .add-to-links li{float: left}
-#product-options-wrapper{width: 250px}
+/*Checkout Page*/
+input[type=text]#city,input[type=text]#postcode{width: 100px;}
+.form-group #region_id,.form-group #country{width: 300px}
+.discount-form{display: inline-block}
+.discount-form .input-box, .discount-form .buttons-set{float: left}
