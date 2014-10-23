@@ -643,6 +643,6 @@ input[type=text]#coupon_code{width: 108px;}
 }
 /*Checkout Page*/
 input[type=text]#city,input[type=text]#postcode{width: 100px;}
-.form-group #region_id,.form-group #country{width: 300px}
+.form-group #region_id,.form-group #country{width: 214px}
 .discount-form{display: inline-block}
 .discount-form .input-box, .discount-form .buttons-set{float: left}
