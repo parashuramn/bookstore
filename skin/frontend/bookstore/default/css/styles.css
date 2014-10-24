@@ -33,6 +33,7 @@ label {
     -o-user-select: none;
     user-select: none;
 }
+/*Bootstrap fix*/
 p.required, .validation-advice {
     margin: 5px 0 0;
     color: red;
@@ -441,7 +442,16 @@ label.required:after, span.required:after {
     margin-bottom:10px;
     width:100%;
 }
-
+/*Left Category Layer*/
+.col-left.sidebar{
+    display: block;
+    background: #f9f9f9;
+    border: 1px solid #c6c6c6;
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(149,149,149,0.31);
+    -moz-box-shadow: 0px 4px 10px 0px rgba(149,149,149,0.31);
+    box-shadow: 0px 4px 10px 0px rgba(149,149,149,0.31);
+    border-radius: 5px;
+}
 /* Flip the book on hover */
 .products-grid li .item-container:hover .item-flipper {
     -moz-transform:rotateY(180deg);
@@ -554,7 +564,8 @@ label.required:after, span.required:after {
     margin:0;
     padding:0;
 }
-
+.page-title{font-weight: bold;color: #087b44;}
+.subtitle{font-size: 24px;color: #087b44;font-weight: bold}
 /****************************/
 /* Products List ************/
 /****************************/
@@ -646,3 +657,6 @@ input[type=text]#city,input[type=text]#postcode{width: 100px;}
 .form-group #region_id,.form-group #country{width: 214px}
 .discount-form{display: inline-block}
 .discount-form .input-box, .discount-form .buttons-set{float: left}
+#shopping-cart-table .glyphicon{color: #FA9221;}
+/*Account Page*/
+.back-link a:hover{color: #fff;}
