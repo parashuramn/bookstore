@@ -31,20 +31,24 @@
  * @see Mage_Catalog_Block_Product_List_Toolbar
  */
 ?>
+<?php
+function check_grid($grid_mode){
+    switch ($grid_mode) {
+        case 'grid':
+            return '<i class="glyphicon glyphicon-th"></i>';
+            break;
+        case 'list':
+            return '<i class="glyphicon glyphicon-th-list"></i>';
+            break;
+    }
+}
+?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
     <div class="pager">
-        <p class="amount">
-            <?php if($this->getLastPageNum()>1): ?>
-                <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
-            <?php else: ?>
-                <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
-            <?php endif; ?>
-        </p>
-
-        <div class="limiter">
-            <label><?php echo $this->__('Show') ?></label>
-            <select onchange="setLocation(this.value)">
+        <div class="form-inline limiter">
+            <label for="pager-show"><?php echo $this->__('Show') ?></label>
+            <select class="form-control" id="pager-show" onchange="setLocation(this.value)">
             <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
                 <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
                     <?php echo $_limit ?>
@@ -53,47 +57,48 @@
             </select> <?php echo $this->__('per page') ?>
         </div>
 
+        <?php if( $this->isEnabledViewSwitcher() ): ?>
+            <p class="view-mode">
+                <?php $_modes = $this->getModes(); ?>
+                <?php if($_modes && count($_modes)>1): ?>
+                    <?php $current_mode = ''; foreach ($this->getModes() as $_code=>$_label): ?>
+                        <?php if($this->isModeActive($_code)): $current_mode = $_code;?>
+                            <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo check_grid(strtolower($_code)) ?></strong>&nbsp;
+                        <?php else: ?>
+                            <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo check_grid(strtolower($_code)) ?></a>&nbsp;
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <label class="view"><?php if($current_mode == 'grid'){echo $this->__('Grid view');}elseif($current_mode == 'list'){echo $this->__('List view');} ?></label>
+            </p>
+        <?php endif; ?>
+
+        <div class="form-inline sort-by">
+            <label for="sort"><?php echo $this->__('Sort By') ?></label>
+            <select class="form-control" id="sort" onchange="setLocation(this.value)">
+                <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                    <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                        <?php echo $this->__($_order) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <?php if($this->getCurrentDirection() == 'desc'): ?>
+                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="asc">
+                    <i class="glyphicon glyphicon-arrow-up"></i>
+                </a>
+            <?php else: ?>
+                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="desc">
+                    <i class="glyphicon glyphicon-arrow-down"></i>
+                </a>
+            <?php endif; ?>
+        </div>
         <?php echo $this->getPagerHtml() ?>
 
     </div>
 
     <?php if( $this->isExpanded() ): ?>
     <div class="sorter">
-        <?php if( $this->isEnabledViewSwitcher() ): ?>
-        <p class="view-mode">
-            <?php $_modes = $this->getModes(); ?>
-            <?php if($_modes && count($_modes)>1): ?>
-            <label><?php echo $this->__('View as') ?>:</label>
-            <?php foreach ($this->getModes() as $_code=>$_label): ?>
-                <?php if($this->isModeActive($_code)): ?>
-                    <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>&nbsp;
-                <?php else: ?>
-                    <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>&nbsp;
-                <?php endif; ?>
-            <?php endforeach; ?>
-            <?php endif; ?>
-        </p>
-        <?php endif; ?>
-    
-        <div class="sort-by">
-            <label><?php echo $this->__('Sort By') ?></label>
-            <select onchange="setLocation(this.value)">
-            <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
-                <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
-                    <?php echo $this->__($_order) ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
-            <?php if($this->getCurrentDirection() == 'desc'): ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="sort-by-switcher sort-by-switcher--desc">
-                    <?php echo $this->__('Set Ascending Direction') ?>
-                </a>
-            <?php else: ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="sort-by-switcher sort-by-switcher--asc">
-                    <?php echo $this->__('Set Descending Direction') ?>
-                </a>
-            <?php endif; ?>
-        </div>
+
     </div>
     <?php endif; ?>
 </div>

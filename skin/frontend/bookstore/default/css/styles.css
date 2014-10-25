@@ -589,7 +589,6 @@ label.required:after, span.required:after {
 .products-grid .panel-footer {
     overflow:hidden;
 }
-
 .product-name a {
     font-size: 18px;
     color:#333;
@@ -604,7 +603,90 @@ label.required:after, span.required:after {
     margin-bottom:10px;
     display:block;
 }
-
+/*Product List Mode*/
+.products-list .item .product-image{
+    float: left;
+}
+/*Pager*/
+.toolbar .pager, .toolbar-bottom {
+    border-color: #eee;
+    border-width: 1px;
+}
+.sort-by {
+    float: right;
+    margin-right: 4px;
+}
+.toolbar .pager .limiter {
+    float: right;
+    margin-right: 30px;
+}
+.view-mode label.view {
+    display: block;
+    float: left;
+    line-height: 2.8em;
+    padding-left: 10px;
+    font-size: .91em;
+}
+.view-mode {
+    float: left;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin: 0;
+}
+i{
+    transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -o-transition: all .8s ease;
+}
+.view-mode i{
+    font-size: 1.16em;
+    padding: 9px 8px 7px;
+}
+.view-mode a {
+    color: #aaa;
+    background-color: #eee;
+}
+.view-mode i:hover{
+    color: #f0ad4e;
+}
+.view-mode strong,.sort-by a{
+    background-color: #3B4348;
+    border-color: #fff;
+    border-width: 0px;
+    color: #FA9221;
+}
+.view-mode .grid, .view-mode .list {
+    float: left;
+    display: block;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    transition: background-color .7s ease;
+    -moz-transition: background-color .7s ease;
+    -webkit-transition: background-color .7s ease;
+    -o-transition: background-color .7s ease;
+}
+.pager a.asc i, .pager a.desc i {
+    padding: 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.pager a.asc, .pager a.desc {
+    float: right;
+    color: #fff;
+    font-size: 1.16em;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.pager a.asc i:hover, .pager a.desc i:hover{
+    color: #FA9221;
+}
 /****************************/
 /* Products View Page ************/
 /****************************/

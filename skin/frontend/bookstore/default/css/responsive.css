@@ -38,6 +38,7 @@
         display: none;
     }
 }
+
 @media only screen and (max-width: 770px) {
     .col1-layout .sorter,
     .col1-layout .pager {
@@ -53,6 +54,11 @@
     }
     .col1-layout .pager .count-container {
         float: right;
+    }
+    .toolbar .pager .view-mode {
+        clear: both;
+        float: none;
+        margin-bottom: 1.5em;
     }
 }
 @media only screen and (max-width: 979px) {
