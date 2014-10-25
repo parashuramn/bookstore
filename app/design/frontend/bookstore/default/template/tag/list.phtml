@@ -36,13 +36,11 @@
         decorateGeneric($("<?php echo $this->getUniqueHtmlId('product-tags_'); ?>").select('li'), ['first', 'last']);
     </script>
     <?php endif; ?>
-    <form id="addTagForm" action="<?php echo $this->getFormAction(); ?>" method="get">
-        <div class="form-add">
+    <form role="form" id="addTagForm" action="<?php echo $this->getFormAction(); ?>" method="get">
+        <div class="form-inline form-add">
             <label for="productTagName"><?php echo $this->__('Add Your Tags:') ?></label>
-            <div class="input-box">
-                <input type="text" class="form-control required-entry" name="productTagName" id="productTagName" />
-            </div>
-            <button type="button" title="<?php echo $this->__('Add Tags') ?>" class="btn btn-success" onclick="submitTagForm()">
+            <input type="text" class="form-control required-entry" name="productTagName" id="productTagName" />
+            <button type="button" title="<?php echo $this->__('Add Tags') ?>" class="form-control btn btn-success" onclick="submitTagForm()">
                 <span>
                     <span><?php echo $this->__('Add Tags') ?></span>
                 </span>

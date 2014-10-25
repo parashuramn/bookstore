@@ -47,6 +47,7 @@ p.required, .validation-advice {
     display: table;
     clear: both;
 }
+.form-inline {margin-bottom: 20px;}
 /*Global Notice*/
 .global-site-notice{text-align: center}
 /* Text Banners Background Colors */
@@ -443,7 +444,7 @@ label.required:after, span.required:after {
     width:100%;
 }
 /*Left Category Layer*/
-.col-left.sidebar{
+.col-left.sidebar,.col-right.sidebar{
     display: block;
     background: #f9f9f9;
     border: 1px solid #c6c6c6;
