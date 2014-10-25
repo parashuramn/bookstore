@@ -55,11 +55,16 @@
     .col1-layout .pager .count-container {
         float: right;
     }
+    /*Toolbar View*/
     .toolbar .pager .view-mode {
         clear: both;
         float: none;
         margin-bottom: 1.5em;
     }
+    .toolbar .pager .limiter {
+        float: left;
+    }
+    .toolbar .pager label{display: none}
 }
 @media only screen and (max-width: 979px) {
     .col2-left-layout .sorter,

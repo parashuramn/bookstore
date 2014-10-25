@@ -675,6 +675,7 @@ i{
     height: 30px;
     line-height: 30px;
     text-align: center;
+    background: #3B4348;
 }
 .pager a.asc, .pager a.desc {
     float: right;

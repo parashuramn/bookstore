@@ -46,17 +46,6 @@ function check_grid($grid_mode){
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
     <div class="pager">
-        <div class="form-inline limiter">
-            <label for="pager-show"><?php echo $this->__('Show') ?></label>
-            <select class="form-control" id="pager-show" onchange="setLocation(this.value)">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit ?>
-                </option>
-            <?php endforeach; ?>
-            </select> <?php echo $this->__('per page') ?>
-        </div>
-
         <?php if( $this->isEnabledViewSwitcher() ): ?>
             <p class="view-mode">
                 <?php $_modes = $this->getModes(); ?>
@@ -72,6 +61,25 @@ function check_grid($grid_mode){
                 <label class="view"><?php if($current_mode == 'grid'){echo $this->__('Grid view');}elseif($current_mode == 'list'){echo $this->__('List view');} ?></label>
             </p>
         <?php endif; ?>
+        <?php if($this->getCurrentDirection() == 'desc'): ?>
+            <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="asc">
+                <i class="glyphicon glyphicon-arrow-up"></i>
+            </a>
+        <?php else: ?>
+            <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="desc">
+                <i class="glyphicon glyphicon-arrow-down"></i>
+            </a>
+        <?php endif; ?>
+        <div class="form-inline limiter">
+            <label for="pager-show"><?php echo $this->__('Show') ?></label>
+            <select class="form-control" id="pager-show" onchange="setLocation(this.value)">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                    <?php echo $_limit ?>
+                </option>
+            <?php endforeach; ?>
+            </select> <?php //echo $this->__('per page') ?>
+        </div>
 
         <div class="form-inline sort-by">
             <label for="sort"><?php echo $this->__('Sort By') ?></label>
@@ -82,15 +90,6 @@ function check_grid($grid_mode){
                     </option>
                 <?php endforeach; ?>
             </select>
-            <?php if($this->getCurrentDirection() == 'desc'): ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="asc">
-                    <i class="glyphicon glyphicon-arrow-up"></i>
-                </a>
-            <?php else: ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="desc">
-                    <i class="glyphicon glyphicon-arrow-down"></i>
-                </a>
-            <?php endif; ?>
         </div>
         <?php echo $this->getPagerHtml() ?>
 
