@@ -23,21 +23,29 @@
  * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+/* @var $this Mage_Wishlist_Block_Customer_Wishlist_Item_Options */
 ?>
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Tags') ?></h1>
+
+<?php $options = $this->getOptionList(); ?>
+<?php if ($options): ?>
+<div class="truncated">
+  <div class="truncated_full_value">
+      <div class="item-options">
+          <p><?php echo $this->__('Options Details'); ?></p>
+          <dl>
+              <?php foreach ($options as $option): ?>
+              <dt><?php echo $this->escapeHtml($option['label']) ?></dt>
+              <dd>
+                  <?php if (is_array($option['value'])): ?>
+                  <?php echo nl2br(implode("\n", $option['value'])) ?>
+                  <?php else: ?>
+                  <?php echo $option['value'] ?>
+                  <?php endif; ?>
+              </dd>
+              <?php endforeach; ?>
+          </dl>
+      </div>
+  </div>
+  <a href="#" onclick="return false;" class="details"><?php echo $this->__('View Details') ?></a>
 </div>
-<?php if($this->getTags()): ?>
-    <p><?php echo $this->__('Click on a tag to view your corresponding products.') ?></p>
-    <ul class="tags-list">
-        <?php foreach ($this->getTags() as $_tag): ?>
-            <li><a href="<?php echo $this->getUrl('tag/customer/view', array('tagId' => $_tag->getTagId())) ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_tag->getName()) ?></a></li>
-        <?php endforeach; ?>
-    </ul>
-<?php else: ?>
-    <p><?php echo $this->__('You have not tagged any products yet.') ?></p>
-<?php endif; ?>
-<div class="buttons-set">
-    <p class="btn btn-warning back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-</div>
+<?php endif ?>

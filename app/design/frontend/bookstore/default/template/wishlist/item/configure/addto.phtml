@@ -24,20 +24,16 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Tags') ?></h1>
-</div>
-<?php if($this->getTags()): ?>
-    <p><?php echo $this->__('Click on a tag to view your corresponding products.') ?></p>
-    <ul class="tags-list">
-        <?php foreach ($this->getTags() as $_tag): ?>
-            <li><a href="<?php echo $this->getUrl('tag/customer/view', array('tagId' => $_tag->getTagId())) ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_tag->getName()) ?></a></li>
-        <?php endforeach; ?>
-    </ul>
-<?php else: ?>
-    <p><?php echo $this->__('You have not tagged any products yet.') ?></p>
+
+<?php $_wishlistItem = $this->getWishlistItem(); ?>
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getUpdateUrl($_wishlistItem); ?>
+<ul class="add-to-links">
+<?php if ($this->helper('wishlist')->isAllow()) : ?>
+    <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-compare"><?php echo $this->__('Update Wishlist') ?></a></li>
 <?php endif; ?>
-<div class="buttons-set">
-    <p class="btn btn-warning back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-</div>
+<?php $_product = $this->getProduct(); ?>
+<?php $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product); ?>
+<?php if ($_compareUrl) : ?>
+    <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+<?php endif; ?>
+</ul>

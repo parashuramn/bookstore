@@ -24,20 +24,25 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Tags') ?></h1>
+<?php /* @var $this Mage_Sales_Block_Recurring_Profile_View */?>
+<?php if ($this->getIsAddress()):?>
+
+<?php foreach ($this->getRenderedInfo() as $row):?>
+<address><?php echo nl2br($this->escapeHtml($this->getObjectData($row, 'value')))?></address>
+<?php endforeach;?>
+
+<?php else:?>
+<div class="table-responsive">
+    <table class="table info-table">
+    <tbody>
+        <?php foreach ($this->getRenderedInfo() as $row):?>
+        <?php $isAmount = $this->getObjectData($row, 'is_amount');?>
+        <tr>
+            <th><?php echo $this->escapeHtml($this->getObjectData($row, 'label'))?>:</th>
+            <td><?php echo $this->renderRowValue($row) ?></td>
+        </tr>
+        <?php endforeach;?>
+    </tbody>
+</table>
 </div>
-<?php if($this->getTags()): ?>
-    <p><?php echo $this->__('Click on a tag to view your corresponding products.') ?></p>
-    <ul class="tags-list">
-        <?php foreach ($this->getTags() as $_tag): ?>
-            <li><a href="<?php echo $this->getUrl('tag/customer/view', array('tagId' => $_tag->getTagId())) ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_tag->getName()) ?></a></li>
-        <?php endforeach; ?>
-    </ul>
-<?php else: ?>
-    <p><?php echo $this->__('You have not tagged any products yet.') ?></p>
-<?php endif; ?>
-<div class="buttons-set">
-    <p class="btn btn-warning back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-</div>
+<?php endif;?>

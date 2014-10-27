@@ -36,6 +36,11 @@ label {
 .label{
     color: #333;
 }
+textarea{max-width: 450px;}
+#cart-sidebar .glyphicon,table .glyphicon{color: #FA9221;}
+#cart-sidebar a, table a, .block-wishlist a,.block-compare a{
+    color: #FA9221;
+}
 /*Bootstrap fix*/
 p.required, .validation-advice {
     margin: 5px 0 0;
@@ -82,7 +87,6 @@ label.required:after, span.required:after {
 }
 .form-group li{margin-bottom: 20px;}
 .buttons-set{max-width: 445px}
-.buttons-set .back-link{float:left;line-height: 33px;margin:0}
 .buttons-set button{float:right;margin-left: 5px;min-width: 140px}
 /* Main Sections */
 #maincontent {
@@ -736,6 +740,9 @@ input[type=text]#coupon_code{width: 108px;}
     margin-top: 0px;
     margin-right: 15px;
     float: left;
+}
+.add-to-links li{
+    display: inline;
 }
 /*Product Collateral Tabs*/
 .toggle-content.tabs ul{
@@ -1458,6 +1465,10 @@ input[type=text]#city,input[type=text]#postcode{width: 100px;}
 .form-group #region_id,.form-group #country{width: 214px}
 .discount-form{display: inline-block}
 .discount-form .input-box, .discount-form .buttons-set{float: left}
-#shopping-cart-table .glyphicon{color: #FA9221;}
 /*Account Page*/
-.back-link a:hover{color: #fff;}
+.btn-warning a:hover{color: #000;}
+.customer-address-form input[type=text],.customer-account-edit input[type=text],
+.customer-account-edit input[type=email]{
+    width: 250px;
+}
+.wishlist-index-index textarea{min-width: 200px;max-width: 250px;}

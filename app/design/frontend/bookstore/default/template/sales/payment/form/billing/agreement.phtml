@@ -24,20 +24,18 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Tags') ?></h1>
-</div>
-<?php if($this->getTags()): ?>
-    <p><?php echo $this->__('Click on a tag to view your corresponding products.') ?></p>
-    <ul class="tags-list">
-        <?php foreach ($this->getTags() as $_tag): ?>
-            <li><a href="<?php echo $this->getUrl('tag/customer/view', array('tagId' => $_tag->getTagId())) ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_tag->getName()) ?></a></li>
-        <?php endforeach; ?>
-    </ul>
-<?php else: ?>
-    <p><?php echo $this->__('You have not tagged any products yet.') ?></p>
-<?php endif; ?>
-<div class="buttons-set">
-    <p class="btn btn-warning back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-</div>
+<?php /* @var $this Mage_Sales_Block_Payment_Form_Billing_Agreement */?>
+<?php $_code=$this->getMethodCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+        <label for="<?php echo $_code ?>_ba_agreement_id" class="required"><em>*</em><?php echo $this->__('Billing Agreement') ?></label>
+        <div class="input-box">
+            <select id="<?php echo $_code ?>_ba_agreement_id" name="payment[<?php echo $this->getTransportName(); ?>]" class="required-entry">
+                <option value=""><?php echo $this->__('-- Please Select Billing Agreement--') ?></option>
+            <?php foreach ($this->getBillingAgreements() as $id => $referenceId): ?>
+                <option value="<?php echo $id ?>"><?php echo $this->escapeHtml($referenceId) ?></option>
+            <?php endforeach ?>
+            </select>
+        </div>
+    </li>
+</ul>
