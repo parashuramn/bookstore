@@ -58,7 +58,7 @@
                         </li>
                         <?php if ($this->isNewsletterEnabled()): ?>
                         <li class="control">
-                            <div class="checkbox">
+                            <div class="checkbox-inline">
                                 <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" />
                                 <label for="is_subscribed"><?php echo $this->__('Sign Up for Newsletter') ?></label>
                             </div>

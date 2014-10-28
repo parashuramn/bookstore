@@ -27,6 +27,7 @@ label {
     font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
     font-weight: 600;
     color: #333;
+    padding: 3px;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -36,7 +37,27 @@ label {
 .label{
     color: #333;
 }
-textarea{max-width: 450px;}
+textarea{
+    max-width: 450px;
+    min-width: 250px;
+}
+input[type=text], select, select.form-control,
+input[type=password]{
+    width: 250px;
+}
+.back-link{
+    float:left;
+}
+.messages .success{
+    background: #FA9221;
+    padding: 5px;
+    font-style: italic;
+}
+.messages .error-msg{
+    background: #FA9221;
+    padding: 5px;
+    font-style: italic;
+}
 #cart-sidebar .glyphicon,table .glyphicon{color: #FA9221;}
 #cart-sidebar a, table a, .block-wishlist a,.block-compare a{
     color: #FA9221;
@@ -605,7 +626,10 @@ label.required:after, span.required:after {
     color:#333;
     font-weight: bold;
 }
-
+.price{
+    font-size: 25px;
+    font-weight: bold;
+}
 .price-box p {
     margin:0;
 }
@@ -955,10 +979,6 @@ input[type=text]#coupon_code{width: 108px;}
         padding-left: 0;
     }
 }
-.opc select {
-    width: 365px;
-}
-
 /* -------------------------------------------- *
  * Section Styling - Default
  */
@@ -1024,7 +1044,7 @@ input[type=text]#coupon_code{width: 108px;}
 }
 
 .opc .section.allow .step-title .number {
-    background-color: #99cce5;
+    background-color: #5cb85c;
 }
 
 .opc .section.allow .step-title h2 {
@@ -1077,13 +1097,8 @@ input[type=text]#coupon_code{width: 108px;}
     margin-left: 5px;
     margin-bottom: 0;
 }
-.opc .buttons-set .back-link {
-    float: right;
-    margin: 0;
-}
 .opc .buttons-set a {
     line-height: 20px;
-    display: inline-block;
     padding: 5px 5px 5px 0;
 }
 
@@ -1361,7 +1376,9 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     width: 100%;
     min-height: 400px;
 }
-
+#onepage-checkout-shipping-method-additional-load{
+    margin-bottom: 20px;
+}
 /* Gift options */
 .gift-messages-form .item {
     content: '';
@@ -1460,7 +1477,6 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
         width: 100%;
     }
 }
-input[type=text]{width: 250px;}
 input[type=text]#city,input[type=text]#postcode{width: 100px;}
 .form-group #region_id,.form-group #country{width: 214px}
 .discount-form{display: inline-block}

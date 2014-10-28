@@ -1,3 +1,12 @@
+@media only screen and (max-width: 480px) {
+    input[type=text], select, select.form-control,
+    input[type=password],input[type=email]{
+        width: 200px;
+    }
+    textarea{
+        min-width: 200px;
+    }
+}
 @media(max-width:767px) {
     .navbar-nav > li {
         border-bottom: 1px solid #DDDDDD;
