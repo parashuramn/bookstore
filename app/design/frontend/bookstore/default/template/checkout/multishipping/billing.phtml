@@ -37,7 +37,7 @@
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <script src="<?php echo Mage::getBaseUrl('js') ?>varien/payment.js" type="text/javascript"></script>
-    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="multishipping-billing-form">
+    <form role="form" action="<?php echo $this->getPostActionUrl() ?>" method="post" id="multishipping-billing-form">
         <div class="col2-set">
             <div class="col-1 col-narrow">
                 <div class="box">
@@ -88,8 +88,8 @@
             </div>
         </div>
         <div class="buttons-set">
-            <p class="back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Shipping Information') ?></a></p>
-            <button id="payment-continue" type="submit" title="<?php echo $this->__('Continue to Review Your Order') ?>" class="button"><span><span><?php echo $this->__('Continue to Review Your Order') ?></span></span></button>
+            <p class="btn btn-warning back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Shipping Information') ?></a></p>
+            <button id="payment-continue" type="submit" title="<?php echo $this->__('Continue to Review Your Order') ?>" class="btn btn-success"><span><span><?php echo $this->__('Continue to Review Your Order') ?></span></span></button>
         </div>
     </form>
     <script type="text/javascript">

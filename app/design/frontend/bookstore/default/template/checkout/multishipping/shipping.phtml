@@ -95,8 +95,9 @@
             </div>
             <div class="col-2 col-wide">
                 <?php echo $this->helper('giftmessage/message')->getInline('multishipping_adress_checkbox', $_address); ?>
-                <h3><?php echo $this->__('Items') ?> <span class="separator">|</span> <a href="<?php echo $this->getItemsEditUrl($_address) ?>"><?php echo $this->__('Edit Items') ?></a></h3>
-                <table class="data-table" id="shipping-table-<?php echo $_address->getId() ?>">
+                <h3><?php echo $this->__('Items') ?> <span class="separator">|</span> <a class="glyphicon glyphicon-pencil" href="<?php echo $this->getItemsEditUrl($_address) ?>">&nbsp;</a></h3>
+                <div class="table-responsive">
+                    <table class="table" id="shipping-table-<?php echo $_address->getId() ?>">
                     <col />
                     <col width="1" />
                     <thead>
@@ -116,6 +117,7 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
+                </div>
                 <script type="text/javascript">decorateTable('shipping-table-<?php echo $_address->getId() ?>')</script>
                 <?php echo $this->helper('giftmessage/message')->getInline('multishipping_adress', $_address); ?>
             </div>
@@ -123,8 +125,8 @@
         <?php endforeach; ?>
         <?php echo $this->getChildHtml('checkout_billing_items') ?>
         <div class="buttons-set">
-            <p class="back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Select Addresses') ?></a></p>
-            <button data-action="checkout-continue-billing" type="submit" title="<?php echo $this->__('Continue to Billing Information') ?>" class="button"><span><span><?php echo $this->__('Continue to Billing Information') ?></span></span></button>
+            <p class="btn btn-warning back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Select Addresses') ?></a></p>
+            <button data-action="checkout-continue-billing" type="submit" title="<?php echo $this->__('Continue to Billing Information') ?>" class="btn btn-success"><span><span><?php echo $this->__('Continue to Billing Information') ?></span></span></button>
         </div>
     </form>
 </div>

@@ -35,7 +35,8 @@
     <?php $billingAgreements = $this->getBillingAgreements(); ?>
     <?php if (count($billingAgreements) > 0): ?>
         <?php echo $this->getChildHtml('pager'); ?>
-        <table id="billing-agreements" class="data-table">
+        <div class="table-responsive">
+            <table id="billing-agreements" class="table">
             <col />
             <col width="1" />
             <col />
@@ -65,6 +66,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
         <script type="text/javascript">decorateTable('billing-agreements')</script>
     <?php else: ?>
         <p><?php echo $this->__('There are no billing agreements yet.')?></p>
@@ -85,7 +87,7 @@
                                     <option value="<?php echo $code ?>"><?php echo $title ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <button type="submit" class="button"><span><span><?php echo $this->__('Create...') ?></span></span></button>
+                            <button type="submit" class="btn btn-success"><span><span><?php echo $this->__('Create...') ?></span></span></button>
                         </li>
                     </ul>
                 </div>
@@ -94,6 +96,6 @@
     <?php endif; ?>
 
     <div class="buttons-set">
-        <p class="back-link"><a href="<?php echo $this->escapeHtml($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <p class="btn btn-warning back-link"><a href="<?php echo $this->escapeHtml($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
     </div>
 </div>
