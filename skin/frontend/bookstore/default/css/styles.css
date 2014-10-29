@@ -472,6 +472,9 @@ label.required:after, span.required:after {
     width:100%;
 }
 /*Left Category Layer*/
+.short-description{
+    clear: both;
+}
 .col-left.sidebar,.col-right.sidebar{
     display: block;
     background: #f9f9f9;
