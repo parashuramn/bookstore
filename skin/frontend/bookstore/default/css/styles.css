@@ -735,7 +735,7 @@ i,a{
 .col-md-6.registered-users{border-left: 1px solid #ddd;}
 .fields .field{margin-bottom: 20px}
 /*Product View Page*/
-input[type=number].qty, input[type=text].qty{width: 40px;}
+input[type=number].qty, input[type=text].qty{width: 60px;}
 input[type=text]#productTagName{width: 100px;}
 input[type=text]#coupon_code{width: 108px;}
 .product-view .add-to-cart .qty-wrapper,
@@ -1480,10 +1480,22 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
         width: 100%;
     }
 }
-input[type=text]#city,input[type=text]#postcode{width: 100px;}
-.form-group #region_id,.form-group #country{width: 214px}
-.discount-form{display: inline-block}
-.discount-form .input-box, .discount-form .buttons-set{float: left}
+input[type=text]#city,input[type=text]#postcode{
+    width: 100px;
+}
+.form-group #region_id,.form-group #country{
+    width: 214px
+}
+.discount-form{
+    display: inline-block
+}
+.discount-form .input-box, .discount-form .buttons-set{
+    float: left
+}
+#co-shipping-method-form{
+    clear: both;
+    margin-top: 20px;
+}
 /*Account Page*/
 .btn-warning a:hover{color: #000;}
 .customer-address-form input[type=text],.customer-account-edit input[type=text],
