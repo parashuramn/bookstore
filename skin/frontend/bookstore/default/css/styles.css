@@ -45,16 +45,23 @@ input[type=text], select, select.form-control,
 input[type=password]{
     width: 250px;
 }
+.no-display{
+    display: none;
+}
+.block-title strong
+{
+    color: #449d44;
+}
 .back-link{
     float:left;
 }
-.messages .success{
+.messages .success-msg{
     background: #FA9221;
     padding: 5px;
     font-style: italic;
 }
 .messages .error-msg{
-    background: #FA9221;
+    background: #f9f9f9;
     padding: 5px;
     font-style: italic;
 }
@@ -474,6 +481,9 @@ label.required:after, span.required:after {
 /*Left Category Layer*/
 .short-description{
     clear: both;
+}
+.block-layered-nav .price{
+    font-size: 13px;
 }
 .col-left.sidebar,.col-right.sidebar{
     display: block;
@@ -1496,9 +1506,12 @@ input[type=text]#city,input[type=text]#postcode{
     clear: both;
     margin-top: 20px;
 }
+#checkout-progress-wrapper .glyphicon{
+    color: #FA9221;
+}
 /*Account Page*/
 .btn-warning a:hover{color: #000;}
-.customer-address-form input[type=text],.customer-account-edit input[type=text],
+.customer-account-edit input[type=text],
 .customer-account-edit input[type=email]{
     width: 250px;
 }

@@ -29,7 +29,7 @@
 <dt class="<?php echo $completeClass ?>">
     <?php echo $this->__('Shipping Address') ?> <span class="changelink"><span class="separator">|</span> <a
         href="#payment"
-        onclick="checkout.changeSection('opc-shipping');return false;"><?php echo $this->__('Change') ?></a></span>
+        onclick="checkout.changeSection('opc-shipping');return false;"><div class="glyphicon glyphicon-pencil"></div></a></span>
 </dt>
 <dd class="<?php echo $completeClass ?>">
     <?php if ($this->getCheckout()->getStepData('shipping', 'complete')): ?>

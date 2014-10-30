@@ -54,7 +54,8 @@
     </div>
 </div>
 <h2><?php echo $this->__('Items Ordered') ?></h2>
-<table class="data-table" id="my-orders-table">
+    <div class="table-responsive">
+        <table class="table" id="my-orders-table">
     <col />
     <col width="1" />
     <col width="1" />
@@ -81,5 +82,6 @@
     </tbody>
         <?php endforeach; ?>
 </table>
+    </div>
 <script type="text/javascript">decorateTable('my-orders-table', {'tbody' : ['odd', 'even'], 'tbody tr' : ['first', 'last']})</script>
 <script type="text/javascript">window.print();</script>

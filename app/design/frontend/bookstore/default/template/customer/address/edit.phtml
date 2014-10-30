@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </li>
-            <li<?php if($this->canSetAsDefaultBilling()) echo ' class="control"' ?>>
+            <li<?php if($this->canSetAsDefaultBilling()) echo ' class="checkbox"' ?>>
                 <?php if($this->isDefaultBilling()): ?>
                     <strong><?php echo $this->__('Default Billing Address') ?></strong>
                 <?php elseif($this->canSetAsDefaultBilling()): ?>
@@ -140,7 +140,7 @@
                     <input type="hidden" name="default_billing" value="1" />
                 <?php endif; ?>
             </li>
-            <li<?php if($this->canSetAsDefaultShipping()) echo ' class="control"' ?>>
+            <li<?php if($this->canSetAsDefaultShipping()) echo ' class="checkbox"' ?>>
                 <?php if($this->isDefaultShipping()): ?>
                     <strong><?php echo $this->__('Default Shipping Address') ?></strong>
                 <?php elseif($this->canSetAsDefaultShipping()): ?>
