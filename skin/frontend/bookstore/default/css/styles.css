@@ -116,6 +116,9 @@ label.required:after, span.required:after {
 .form-group li{margin-bottom: 20px;}
 .buttons-set{max-width: 445px}
 .buttons-set button{float:right;margin-left: 5px;min-width: 140px}
+.product-options .input-box{
+    margin-bottom: 20px;
+}
 /* Main Sections */
 #maincontent {
     min-height:300px;
@@ -642,6 +645,10 @@ label.required:after, span.required:after {
 .price{
     font-size: 25px;
     font-weight: bold;
+}
+.old-price span.price{
+    font-size: 16px;
+    text-decoration: line-through;
 }
 .price-box p {
     margin:0;

@@ -73,6 +73,10 @@
     .toolbar .pager .limiter {
         float: left;
     }
+    .toolbar .pager .sort-by {
+        clear: both;
+        float: left;
+    }
     .toolbar .pager label{display: none}
 }
 @media only screen and (max-width: 979px) {
