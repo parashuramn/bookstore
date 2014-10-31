@@ -45,7 +45,7 @@ $_helper = $this->helper('catalog/output');
                         <?php if($_product->isSaleable()): ?>
                             <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-warning btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></button>
                         <?php else: ?>
-                            <p class="btn btn-alert availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <p class="btn btn-default availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
                     </div>
                 </li>
