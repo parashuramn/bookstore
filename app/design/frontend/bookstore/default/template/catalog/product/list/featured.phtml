@@ -15,7 +15,6 @@ $_columnCount = 5;
 $i = 0;
 $f=0;
 foreach ($collection as $_product) :
-$_product = Mage::getModel('catalog/product')->setStoreId($storeId)->load($_product->getId());
 ?>
 <?php if ($i++%$_columnCount==0): ?>
 <div class="category-products">
