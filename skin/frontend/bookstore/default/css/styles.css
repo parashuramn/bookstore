@@ -666,6 +666,9 @@ label.required:after, span.required:after {
     color:#333;
     font-weight: bold;
 }
+#upsell-product-table .item .product-name{
+    clear: both;
+}
 .price{
     font-size: 25px;
     font-weight: bold;
