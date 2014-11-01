@@ -13,6 +13,25 @@
     <ul class="products-list row" id="products-list">
     <?php foreach ($_productCollection as $_product): ?>
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?> col-md-12">
+            <?php
+                //Check New-Special-Featured
+                if($this->IsNew($_product)){
+                    echo '<div class="label-new">New</div>';
+                };
+                if($this->IsFeatured($_product)){
+                    echo '<div class="label-featured">Featured</div>';
+                }
+                if($this->isSpecial($_product)){
+                    $percentPrice = $this->getPercentSpecial($_product);
+                    if($percentPrice !=false)
+                    {
+                        echo '<div class="label-sale">-'.$percentPrice.'%</div>';
+                    }
+                    else{
+                        echo '<div class="label-sale">Sale Off</div>';
+                    }
+                }
+            ?>
             <?php // Product Image ?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
             <?php // Product description ?>
@@ -59,7 +78,25 @@
         <ul class="products-grid row">
         <?php endif ?>
         <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-md-4">
-
+            <?php
+            //Check New-Special-Featured
+                if($this->IsNew($_product)){
+                    echo '<div class="label-new">New</div>';
+                };
+                if($this->IsFeatured($_product)){
+                    echo '<div class="label-featured">Featured</div>';
+                }
+                if($this->isSpecial($_product)){
+                    $percentPrice = $this->getPercentSpecial($_product);
+                    if($percentPrice !=false)
+                    {
+                        echo '<div class="label-sale">-'.$percentPrice.'%</div>';
+                    }
+                    else{
+                        echo '<div class="label-sale">Sale Off</div>';
+                    }
+                }
+            ?>
             <div class="item-container img-thumbnail">
                 <div class="item-flipper">
                 <!-- Front content-->
@@ -69,16 +106,6 @@
                            class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(259,245); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img-responsive" />
                         </a>
                     </div>
-                    <!-- Back Content -->
-                    <div class="item-back">
-                        <div class="book-info">
-                            <div class="h4"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></div>
-
-                            <div class="short-description"><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?></div>
-                        </div>
-                        <p><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="btn btn-block btn-success"><?php echo $this->__('Book Details')?></a></p>
-                    </div>
-
                 </div>
             </div>
             <h3 class="panel-title product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>

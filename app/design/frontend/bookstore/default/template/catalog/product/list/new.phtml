@@ -15,6 +15,7 @@ $_helper = $this->helper('catalog/output');
                     <ul class="slides products-grid row">
             <?php endif ?>
                                 <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>  col-sm-3 col-xs-6">
+                                    <div class="label-new">New</div>
                                     <div class="item-container img-thumbnail">
                                         <div class="item-flipper">
                                             <div class="item-front">
@@ -24,16 +25,6 @@ $_helper = $this->helper('catalog/output');
                                                    class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(250,245); ?>"
                                                                               alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img-responsive" />
                                                 </a>
-                                            </div>
-
-                                            <div class="item-back">
-                                                <!-- back content -->
-                                                <div class="book-info">
-                                                    <div class="h4"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></div>
-
-                                                    <div class="short-description"><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?></div>
-                                                </div>
-                                                <p><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="btn btn-block btn-success"><?php echo $this->__('Book Details')?></a></p>
                                             </div>
                                         </div>
                                     </div>

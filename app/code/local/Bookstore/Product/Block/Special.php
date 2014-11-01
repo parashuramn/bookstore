@@ -67,7 +67,8 @@ class Bookstore_Product_Block_Special extends Mage_Catalog_Block_Product_Abstrac
 			 ->addAttributeToFilter('special_to_date', array('or'=> array(
 				0 => array('date' => true, 'from' => $dateTomorrow),
 				1 => array('is' => new Zend_Db_Expr('null')))
-			 ), 'left');
+			 ), 'left')
+             ->addAttributeToFilter('special_price', array('null',false));
 
             $this->prepareSortableFieldsByCategory($layer->getCurrentCategory());
 
@@ -118,35 +119,6 @@ class Bookstore_Product_Block_Special extends Mage_Catalog_Block_Product_Abstrac
      */
     protected function _beforeToHtml()
     {
-        /*
-		$toolbar = $this->getToolbarBlock();
-
-        // called prepare sortable parameters
-        $collection = $this->_getProductCollection();
-	    // use sortable parameters
-        if ($orders = $this->getAvailableOrders()) {
-            $toolbar->setAvailableOrders($orders);
-        }
-        if ($sort = $this->getSortBy()) {
-            $toolbar->setDefaultOrder($sort);
-        }
-        if ($dir = $this->getDefaultDirection()) {
-            $toolbar->setDefaultDirection($dir);
-        }
-        if ($modes = $this->getModes()) {
-            $toolbar->setModes($modes);
-        }
-
-        // set collection to toolbar and apply sort
-        $toolbar->setCollection($collection);
-
-        $this->setChild('toolbar', $toolbar);
-        Mage::dispatchEvent('catalog_block_product_list_collection', array(
-            'collection' => $this->_getProductCollection()
-        ));
-
-        $this->_getProductCollection()->load();
-	    return parent::_beforeToHtml();*/
 		$todayDate  = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
 
         $collection = Mage::getResourceModel('catalog/product_collection');
@@ -262,5 +234,19 @@ class Bookstore_Product_Block_Special extends Mage_Catalog_Block_Product_Abstrac
         }
 
         return $this;
+    }
+
+    public function getPercentSpecial($_product)
+    {
+        $specialPrice = Mage::getModel('catalog/product')->load($_product->getID())->getSpecialPrice();
+        $productPrice = Mage::getModel('catalog/product')->load($_product->getID())->getPrice();
+        if($specialPrice){
+            $percentPrice = ($specialPrice/$productPrice)*100;
+            $percentPrice = round($percentPrice);
+            return $percentPrice;
+        }else{
+            return false;
+        }
+
     }
 }

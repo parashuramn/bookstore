@@ -5,7 +5,27 @@
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
-<div class="product-img-box col-md-4"><?php echo $this->getChildHtml('social.sharing') ?>
+<div class="product-img-box col-md-4">
+    <?php
+    //Check New-Special-Featured
+    if($this->IsNew($_product)){
+        echo '<div class="label-new">New</div>';
+    };
+    if($this->IsFeatured($_product)){
+        echo '<div class="label-featured">Featured</div>';
+    }
+    if($this->isSpecial($_product)){
+        $percentPrice = $this->getPercentSpecial($_product);
+        if($percentPrice !=false)
+        {
+            echo '<div class="label-sale">-'.$percentPrice.'%</div>';
+        }
+        else{
+            echo '<div class="label-sale">Sale Off</div>';
+        }
+    }
+    ?>
+    <?php echo $this->getChildHtml('social.sharing') ?>
             <?php echo $this->getChildHtml('media') ?>
             
         </div>
