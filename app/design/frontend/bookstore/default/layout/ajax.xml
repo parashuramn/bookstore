@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<layout version="0.1.0">
-    <ajax_index_quickView>
+<layout>
+    <ajax_product_view>
         <reference name="root">
             <action method="setTemplate"><template>page/empty.phtml</template></action>
         </reference>
@@ -11,10 +11,6 @@
             <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
-
-            <!--Cloud Zoom-->
-            <action method="addItem"><type>skin_js</type><name>js/cloud-zoom.1.0.2.min.js</name><params/></action>
-
         </reference>
         <reference name="content">
             <block type="catalog/product_view" name="product.info" template="ajax/catalog/product/options.phtml">
@@ -64,5 +60,5 @@
 
             </block>
         </reference>
-    </ajax_index_quickView>
+    </ajax_product_view>
 </layout>

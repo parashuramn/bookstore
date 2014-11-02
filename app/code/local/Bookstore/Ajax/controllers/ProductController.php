@@ -4,12 +4,17 @@
  * Date: 02/11/2014
  * Time: 2:13 AM
  */
-require_once ('Mage/Catalog/controllers/ProductController.php');
-class Bookstore_Ajax_IndexController extends Mage_Catalog_ProductController
+require_once 'Mage/Catalog/controllers/ProductController.php';
+class Bookstore_Ajax_ProductController extends Mage_Catalog_ProductController
 {
-    public function quickViewAction() {
+    /**
+     * Product view action
+     */
+    public function viewAction()
+    {
+        // Get initial data from request
+        $productId  = (int) $this->getRequest()->getParam('id');
 
-        $productId = $this->getRequest()->getParam('id');
         // Prepare helper and params
         $viewHelper = Mage::helper('catalog/product_view');
 

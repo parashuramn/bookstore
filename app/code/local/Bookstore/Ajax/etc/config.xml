@@ -7,31 +7,29 @@
     </modules>
     <global>
         <blocks>
-            <bookstore_ajax>
+            <ajax>
                 <class>Bookstore_Ajax_Block</class>
-            </bookstore_ajax>
+            </ajax>
         </blocks>
         <helpers>
-            <bookstore_ajax>
+            <ajax>
                 <class>Bookstore_Ajax_Helper</class>
-            </bookstore_ajax>
+            </ajax>
         </helpers>
     </global>
     <frontend>
         <routers>
-            <bookstore_ajax>
+            <ajax>
                 <use>standard</use>
                 <args>
                     <module>Bookstore_Ajax</module>
                     <frontName>ajax</frontName>
                 </args>
-            </bookstore_ajax>
+            </ajax>
         </routers>
         <layout>
             <updates>
-                <bookstore_ajax>
-                    <file>ajax.xml</file>
-                </bookstore_ajax>
+                <ajax><file>ajax.xml</file></ajax>
             </updates>
         </layout>
     </frontend>
