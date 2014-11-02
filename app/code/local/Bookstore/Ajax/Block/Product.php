@@ -4,12 +4,12 @@
  * Date: 02/11/2014
  * Time: 2:16 AM
  */
-class Bookstore_Ajax_Block_Product extends Mage_Core_Controller_Front_Action
+class Bookstore_Ajax_Block_Product extends Mage_Core_Block_Template
 {
 
-    protected function _construct()
+    public function _prepareLayout()
     {
-        parent::_construct();
+        return parent::_prepareLayout();
     }
 
 }

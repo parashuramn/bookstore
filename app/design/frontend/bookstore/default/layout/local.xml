@@ -79,14 +79,9 @@
     <!--Catalog Product View-->
     <catalog_product_view translate="label">
         <remove name="products.list.home"/>
-        <reference name="root">
-            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
-        </reference>
-        <reference name="head"><action method="addItem"><type>skin_js</type><name>js/jquery.prettyPhoto.js</name></action><action method="addItem"><type>skin_css</type><name>css/prettyPhoto.css</name></action>
-        </reference>
-        <reference name="right">
-            <remove name="right.permanent.callout"/>
-        </reference>
+        <reference name="root"><action method="setTemplate"><template>page/2columns-right.phtml</template></action></reference>
+        <reference name="head"><action method="addItem"><type>skin_js</type><name>js/jquery.prettyPhoto.js</name></action><action method="addItem"><type>skin_css</type><name>css/prettyPhoto.css</name></action></reference>
+        <reference name="right"><remove name="right.permanent.callout"/></reference>
         <reference name="content">
             <block type="core/template" name="social.sharing" as="social.sharing" template="social/sharing.phtml"
                    before="-"/>

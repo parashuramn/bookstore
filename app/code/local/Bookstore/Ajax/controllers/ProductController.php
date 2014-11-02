@@ -10,7 +10,7 @@ class Bookstore_Ajax_ProductController extends Mage_Catalog_ProductController
     /**
      * Product view action
      */
-    public function viewAction()
+    public function quickviewAction()
     {
         // Get initial data from request
         $productId  = (int) $this->getRequest()->getParam('id');
