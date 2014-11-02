@@ -116,5 +116,8 @@ $j(document).ready(function(){
         }
 
     });
+    //Add Bootstrap Class to auto generation code.
+    $j("#country").addClass('form-control');
+    $j('#billing-address-select').addClass('form-control');
 
 });

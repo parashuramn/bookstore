@@ -42,7 +42,7 @@ textarea{
     min-width: 250px;
 }
 input[type=text], select, select.form-control,
-input[type=password]{
+input[type=password], .container input[type=email]{
     width: 250px;
 }
 .no-display{
@@ -124,7 +124,9 @@ label.required:after, span.required:after {
     min-height:300px;
     margin-bottom:20px;
 }
-
+.col-main{
+    margin-top: 20px;
+}
 #after-header {
     background:#efefef;
     margin-bottom:10px;
