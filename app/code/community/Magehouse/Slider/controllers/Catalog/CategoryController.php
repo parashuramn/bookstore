@@ -49,6 +49,7 @@ class Magehouse_Slider_Catalog_CategoryController extends Mage_Catalog_CategoryC
 				}
 			
 			$this->generateLayoutXml()->generateLayoutBlocks(); //Generate new blocks
+                //For Enterprise Version?
 //                $viewpanel = $this->getLayout()->getBlock('enterprisecatalog.leftnav')->toHtml(); // Generate New Layered Navigation Menu
                 $viewpanel = $this->getLayout()->getBlock('catalog.leftnav')->toHtml();
                 $productlist = $this->getLayout()->getBlock('product_list')->toHtml(); // Generate product list
