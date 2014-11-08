@@ -21,6 +21,7 @@
             <action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
             <action method="addItem"><type>skin_js</type><name>js/lib/jquery.slide-packer.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/jquery.easing.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.ui.totop.js</name></action>
             <!--Add JS FancyBox-->
             <action method="addItem"><type>skin_js</type><name helper="themeoptions/fancyBoxJSEnable" /></action>
             <action method="addItem"><type>skin_js</type><name helper="themeoptions/fancyBoxJSPack" /></action>
@@ -30,8 +31,10 @@
             <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action><action method="addItem"><type>skin_css</type><name>css/print.css</name></action>
             <action method="addItem"><type>skin_css</type><name>css/responsive.css</name></action>
             <action method="addItem"><type>skin_css</type><name>css/flexslider/flexslider.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/ui.totop.css</name></action>
             <!--Add Css FancyBox-->
             <action method="addItem"><type>skin_css</type><name helper="themeoptions/fancyBoxCSEnable" /></action>
+            <block type="core/template" name="subheader" template="thinkingmagento/subheader.phtml" />
         </reference>
 
         <!--Header-->

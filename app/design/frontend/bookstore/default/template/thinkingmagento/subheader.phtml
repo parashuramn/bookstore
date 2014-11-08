@@ -1,0 +1,14 @@
+<?php
+    $config = Mage::getModel('themeoptions/others')->getBacktoTop();
+    if($config['enabled'] == 1):
+?>
+<script type="text/javascript">
+    jQuery(window).load(function() {
+        if(!((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)))){
+            jQuery().UItoTop({
+                text: "<?php echo $this->__('Top'); ?>"
+            });
+        }
+    });
+</script>
+<?php endif;?>

@@ -17,4 +17,5 @@ class Bookstore_ThemeOptions_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return 'js/lib/fancybox/jquery.fancybox.pack.js';
     }
+
 }
