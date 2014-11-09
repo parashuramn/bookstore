@@ -1,0 +1,37 @@
+<adminhtml>
+    <menu>
+        <brand_menu translate="title" module="bookstore_brand">
+            <title>Brand Extension</title>
+            <sort_order>1</sort_order>
+            <children>
+                <manage translate="title" >
+                    <title>Manage Brands</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/manage/index</action>
+                </manage>
+                <about translate="title">
+                    <title>About Us</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/about/index</action>
+                </about>
+            </children>
+        </brand_menu>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <manage>
+                        <title>Bookstore Brands</title>
+                    </manage>
+                    <about>
+                        <title>About Us</title>
+                    </about>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
